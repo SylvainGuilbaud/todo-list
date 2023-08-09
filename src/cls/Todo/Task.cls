@@ -1,7 +1,7 @@
 Class Todo.Task Extends (%Persistent, %JSON.Adaptor)
 {
 
-Property text As %String;
+Property text As %String(MAXLEN = 250);
 
 Property completed As %Boolean;
 
