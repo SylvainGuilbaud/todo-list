@@ -99,7 +99,7 @@ ClassMethod NewTask() As %Status
 ClassMethod GetTasks() As %Status
 {
     Set obj = {"tasks": []}
-    Set rs = ##class(%SQL.Statement).%ExecDirect(,"SELECT id,text,important,completed FROM Todo.Task")
+    Set rs = ##class(%SQL.Statement).%ExecDirect(,"SELECT id,text,important,completed FROM Todo.Task order by important,id")
     While rs.%Next() {
         Set task = {
             "id": (rs.%Get("id")),
