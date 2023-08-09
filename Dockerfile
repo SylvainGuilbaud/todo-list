@@ -1,6 +1,6 @@
 ARG IMAGE=containers.intersystems.com/intersystems/iris-community-arm64:2023.1.1.380.0
-ARG IMAGE=intersystems/irishealth-community
-ARG IMAGE=intersystemsdc/iris-community
+ARG IMAGE=intersystems/irishealth-community:2023.2.0.227.0
+ARG IMAGE=intersystems/iris-community:2023.2.0.227.0
 
 FROM $IMAGE
 
