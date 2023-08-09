@@ -8,6 +8,16 @@
             "service": "iris",
             "internalPort": 52773
         }
-    }
+    },
+    "links": {
+        "todo list app":"http://${host}:${port}/front-end/index.html",
+        "terminal": "http://${host}:${port}/terminal/",
+        "class explorer": "http://${host}:${port}/classexplorer/",
+        "api management": "http://${host}:${port}/api/mgmnt/",
+        "swagger-ui": "http://${host}:${port}/swagger-ui/index.html",
+        "unit test": "http://127.0.0.1:12773/csp/sys/%25UnitTest.Portal.Home.cls?$NAMESPACE=IRISAPP",
+        "XML Wizard": "${serverUrl}/isc/studio/templates/%25ZEN.Template.AddInWizard.XMLSchemaWizard.cls?Namespace=${namespace}${serverAuth}",
+        "SOAP Wizard": "${serverUrl}/isc/studio/templates/%25ZEN.Template.AddInWizard.SOAPWizard.cls?Namespace=${namespace}${serverAuth}",
+      },
 
 }

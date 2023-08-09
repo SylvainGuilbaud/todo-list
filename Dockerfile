@@ -1,4 +1,7 @@
 ARG IMAGE=containers.intersystems.com/intersystems/iris-community-arm64:2023.1.1.380.0
+ARG IMAGE=intersystems/irishealth-community
+ARG IMAGE=intersystemsdc/iris-community
+
 FROM $IMAGE
 
 USER root
