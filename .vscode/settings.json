@@ -1,7 +1,7 @@
 {
     "objectscript.conn": {
         "active": true,
-        "ns":"IRISAPP",
+        "ns": "IRISAPP",
         "username": "_system",
         "password": "SYS",
         "docker-compose": {
@@ -9,7 +9,7 @@
             "internalPort": 52773
         },
         "links": {
-            "todo list app":"http://${host}:${port}/front-end/index.html",
+            "todo list app": "http://${host}:${port}/front-end/index.html",
             "todo swagger-ui": "http://${host}:${port}/swagger-ui/index.html",
             "todo class explorer": "http://${host}:${port}/classexplorer/#{%22name%22:%22Todo%22,%22type%22:%22package%22,%22level%22:%22%22,%22namespace%22:%22IRISAPP%22}",
             "_terminal": "http://${host}:${port}/terminal/",
