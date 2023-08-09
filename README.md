@@ -14,5 +14,5 @@ __Instructions:__
 4. Play with the /front-end/api through http://localhost:32773/swagger-ui/index.html
 
 # Demo
-![swagger-ui](https://user-images.githubusercontent.com/27987608/79063723-86cdde00-7ccd-11ea-9914-b8cd7077f6e7.png)
+![demo](https://github.com/SylvainGuilbaud/todo-list/blob/main/demo.jpg)
 
