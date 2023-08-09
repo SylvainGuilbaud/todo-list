@@ -8,7 +8,8 @@ __Requirements:__ any version of IRIS ; otherwise, Caché or Ensemble 2016.2
 
 __Instructions:__
 
-1. `docker compose up -d`
-2. Open your web browser to `http://localhost:32773/front-end/index.html`
-3. Play with the /front-end/api through `http://localhost:32773/swagger-ui/index.html`
+1. `docker compose build --no-cache`
+2. `docker compose up -d`
+3. Open your web browser to http://localhost:32773/front-end/index.html
+4. Play with the /front-end/api through http://localhost:32773/swagger-ui/index.html
 

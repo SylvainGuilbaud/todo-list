@@ -2,6 +2,8 @@
     "objectscript.conn": {
         "active": true,
         "ns":"IRISAPP",
+        "username": "_system",
+        "password": "SYS",
         "docker-compose": {
             "service": "iris",
             "internalPort": 52773
@@ -12,11 +14,7 @@
             "todo class explorer": "http://${host}:${port}/classexplorer/#{%22name%22:%22Todo%22,%22type%22:%22package%22,%22level%22:%22%22,%22namespace%22:%22IRISAPP%22}",
             "_terminal": "http://${host}:${port}/terminal/",
             "_api management": "http://${host}:${port}/api/mgmnt/",
-            "_unit test": "http://127.0.0.1:12773/csp/sys/%25UnitTest.Portal.Home.cls?$NAMESPACE=IRISAPP",
-            "_XML Wizard": "${serverUrl}/isc/studio/templates/%25ZEN.Template.AddInWizard.XMLSchemaWizard.cls?Namespace=${namespace}${serverAuth}",
-            "_SOAP Wizard": "${serverUrl}/isc/studio/templates/%25ZEN.Template.AddInWizard.SOAPWizard.cls?Namespace=${namespace}${serverAuth}",
-          }
+            "_unit test": "http://127.0.0.1:12773/csp/sys/%25UnitTest.Portal.Home.cls?$NAMESPACE=IRISAPP"
+        }
     }
-  
-
 }

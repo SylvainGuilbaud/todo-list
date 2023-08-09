@@ -14,10 +14,10 @@ ClassMethod reset() As %Status
     Set tasks = [
         {"text": "Make dinner reservations", "important": 0, "completed": 0},
         {"text": "Get coffee", "important": 1, "completed": 0},
-        {"text": "Book a hotel for my trip", "important": 0, "completed": 0},
-        {"text": "Upgrade Caché", "important": 0, "completed": 0},
-        {"text": "Update OS X", "important": 0, "completed": 1},
-        {"text": "Buy a new camera lens", "important": 1, "completed": 1}
+        {"text": "Read the InterSystems Official news on Developer Community", "important": 0, "completed": 0},
+        {"text": "Upgrade IRIS", "important": 0, "completed": 0},
+        {"text": "Publish on Developer Community", "important": 0, "completed": 1},
+        {"text": "Check InterSystems Certification Program", "important": 1, "completed": 1}
     ]
     
     Set iter = tasks.%GetIterator()
