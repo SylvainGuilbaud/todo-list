@@ -1,0 +1,17 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"name": "todo-list:IRISAPP web files",
+			"uri": "isfs://todo-list:irisapp/?csp"
+		}
+		// ,
+		// {
+		// 	"name": "todo-list:USER web files",
+		// 	"uri": "isfs://todo-list:user/swagger-ui?csp"
+		// }
+	],
+	"settings": {}
+}

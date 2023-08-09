@@ -1,0 +1,14 @@
+services:
+  iris:
+    build: 
+      context: .
+    restart: always
+    container_name: web-app
+    hostname: web-app
+    ports:
+      - 32772:1972
+      - 32773:52773
+      - 33773:53773
+    command: --check-caps false
+    volumes:
+      - ./front-end:/front-end
