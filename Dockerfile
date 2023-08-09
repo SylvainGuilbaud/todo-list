@@ -13,4 +13,7 @@ COPY iris.script /tmp/iris.script
 RUN iris start IRIS \
 	&& iris session IRIS < /tmp/iris.script \
     && iris stop IRIS quietly
+
+# copy the modified index.html which replaces the default URL of the swagger-ui by :
+# http://localhost:32773/api/mgmnt/v1/IRISAPP/spec/front-end/api
 COPY swagger-ui/index.html /usr/irissys/csp/swagger-ui/index.html
