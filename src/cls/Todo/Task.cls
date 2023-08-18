@@ -5,7 +5,7 @@ Property text As %String(MAXLEN = 250);
 
 Property completed As %Boolean;
 
-Property important As %Boolean;
+Property important As %Boolean [ InitialExpression = 0 ];
 
 ClassMethod reset() As %Status
 {
