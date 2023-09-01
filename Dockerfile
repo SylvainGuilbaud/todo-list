@@ -1,6 +1,6 @@
 ARG IMAGE=containers.intersystems.com/intersystems/iris-community-arm64:latest-cd
 # ARG IMAGE=containers.intersystems.com/intersystems/iris-community:latest-cd
-# ARG IMAGE=intersystemsdc/iris-community:latest
+# ARG IMAGE=intersystemsdc/iris-community:latest  
 
 FROM $IMAGE as builder
 
