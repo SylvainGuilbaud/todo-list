@@ -4,7 +4,7 @@
  zpm "install classexplorer" 
 
  write "INSTALLING IRISAPP"
- do $SYSTEM.OBJ.Load("/app/App.Installer.cls", "ck")
+ do $SYSTEM.OBJ.Load("/home/irisowner/dev/App.Installer.cls", "ck")
  set sc = ##class(App.Installer).setup() 
  if 'sc {
     set ^["USER"]TRACE("IRISAPP App.Installer",$INCREMENT(^["USER"]TRACE("IRISAPP App.Installer")),$zdt($h,3))=$lb($system.Status.GetErrorCodes(sc),$system.Status.GetErrorText(sc))
@@ -46,7 +46,7 @@
  }
 
  zn "irisapp"
- do $System.OBJ.LoadDir("/app/src","ck",,1)
+ do $System.OBJ.LoadDir("/home/irisowner/dev/src","ck",,1)
  set sc = ##class(Todo.Task).reset()
  
 halt

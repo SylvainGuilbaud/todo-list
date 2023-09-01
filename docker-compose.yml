@@ -12,3 +12,4 @@ services:
     command: --check-caps false
     volumes:
       - ./front-end:/front-end
+      - ./swagger-ui/index.html:/usr/irissys/csp/swagger-ui/index.html

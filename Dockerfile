@@ -1,22 +1,28 @@
-ARG IMAGE=intersystems/irishealth-community:2023.2.0.227.0
-ARG IMAGE=containers.intersystems.com/intersystems/iris-community-arm64:2023.2.0.227.0
-ARG IMAGE=intersystems/iris-community:2023.2.0.227.0
+ARG IMAGE=containers.intersystems.com/intersystems/iris-community-arm64:latest-cd
+# ARG IMAGE=containers.intersystems.com/intersystems/iris-community:latest-cd
+# ARG IMAGE=intersystemsdc/iris-community:latest
 
-FROM $IMAGE
+FROM $IMAGE as builder
 
-USER root
-WORKDIR /app
-RUN chown ${ISC_PACKAGE_MGRUSER}:${ISC_PACKAGE_IRISGROUP} /app
+WORKDIR /home/irisowner/dev
 
-USER ${ISC_PACKAGE_MGRUSER}
-COPY App.Installer.cls .
-COPY src src
-COPY iris.script /tmp/iris.script
+ARG TESTS=0
+ARG MODULE="todo-list"
+ARG NAMESPACE="IRISAPP"
 
-RUN iris start IRIS \
-	&& iris session IRIS < /tmp/iris.script \
-    && iris stop IRIS quietly
+ENV IRISUSERNAME "_SYSTEM"
+ENV IRISPASSWORD "SYS"
+ENV IRISNAMESPACE $NAMESPACE
 
-# copy the modified index.html which replaces the default URL of the swagger-ui by :
-# http://localhost:32773/api/mgmnt/v1/IRISAPP/spec/front-end/api
-COPY swagger-ui/index.html /usr/irissys/csp/swagger-ui/index.html
+RUN --mount=type=bind,src=.,dst=. \
+    iris start IRIS && \
+	iris session IRIS < iris.script && \
+    ([ $TESTS -eq 0 ] || iris session iris -U $NAMESPACE "##class(%ZPM.PackageManager).Shell(\"test $MODULE -v -only\",1,1)") && \
+    iris stop IRIS quietly
+
+FROM $IMAGE as final
+ADD --chown=${ISC_PACKAGE_MGRUSER}:${ISC_PACKAGE_IRISGROUP} https://github.com/grongierisc/iris-docker-multi-stage-script/releases/latest/download/copy-data.py /home/irisowner/dev/copy-data.py
+
+RUN --mount=type=bind,source=/,target=/builder/root,from=builder \
+    cp -f /builder/root/usr/irissys/iris.cpf /usr/irissys/iris.cpf && \
+    python3 /home/irisowner/dev/copy-data.py -c /usr/irissys/iris.cpf -d /builder/root/
