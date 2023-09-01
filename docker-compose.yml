@@ -6,8 +6,8 @@ services:
     container_name: web-app
     hostname: web-app
     ports:
-      - 7771:1972
-      - 7772:52773
+      - 31773:1972
+      - 32773:52773
       - 7773:53773
     command: --check-caps false
     volumes:
