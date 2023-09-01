@@ -9,7 +9,7 @@ services:
       - 31773:1972
       - 32773:52773
       - 7773:53773
-    command: --check-caps false
+    command: --check-caps false --ISCAgent false
     volumes:
       - ./front-end:/front-end
       - ./swagger-ui/index.html:/usr/irissys/csp/swagger-ui/index.html
