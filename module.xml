@@ -3,7 +3,7 @@
   <Document name="todo-list.ZPM">
     <Module>
       <Name>todo-list</Name>
-      <Version>1.0.0</Version>
+      <Version>1.0.1</Version>
       <Description>Todo List App</Description>
       <Keywords>REST</Keywords>
       <Packaging>module</Packaging>
