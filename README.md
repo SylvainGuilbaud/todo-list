@@ -10,8 +10,8 @@ __Instructions:__
 
 1. `docker compose build --no-cache`
 2. `docker compose up -d`
-3. Open your web browser to http://localhost:32773/front-end/index.html
-4. Play with the /front-end/api through http://localhost:32773/swagger-ui/index.html
+3. Open your web browser to http://localhost:7772/front-end/index.html
+4. Play with the /front-end/api through http://localhost:7772/swagger-ui/index.html
 
 # Demo
 ![demo](./images/demo.jpg)
