@@ -9,7 +9,11 @@ services:
       - 7771:1972
       - 7772:52773
       - 7773:53773
+    environment:
+      - IRISPASSWORD=SYS
+      - IRISUSERNAME=_SYSTEM
     command: --check-caps false --ISCAgent false
     volumes:
-      - ./front-end:/front-end
+      - ./:/home/irisowner/dev
+      - ./front-end/todoapp:/usr/irissys/csp/front-end
       - ./swagger-ui/index.html:/usr/irissys/csp/swagger-ui/index.html
