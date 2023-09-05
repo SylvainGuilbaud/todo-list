@@ -7,9 +7,9 @@
       <Description>Todo List App</Description>
       <Keywords>REST</Keywords>
       <Packaging>module</Packaging>
-      <CSPApplication AuthenticationMethods="36" CookiePath="/csp/irisapp/" DefaultTimeout="900" DeployPath="${cspdir}irisapp" Description="Interoperability Management Portal" Recurse="1" Resource="%Ens_Portal" ServeFiles="1" ServeFilesTimeout="3600" Url="/csp/irisapp" UseSessionCookie="2"/>
-      <CSPApplication CookiePath="/front-end/api/" DefaultTimeout="900" DispatchClass="Todo.REST" MatchRoles=":%All" PasswordAuthEnabled="1" Recurse="1" ServeFiles="1" ServeFilesTimeout="3600" UnauthenticatedEnabled="1" Url="/front-end/api" UseSessionCookie="2"/>
-      <CSPApplication CookiePath="/front-end/" DefaultTimeout="900" DeployPath="/front-end/todoapp" MatchRoles=":%All" PasswordAuthEnabled="1" Recurse="1" ServeFiles="1" ServeFilesTimeout="3600" UnauthenticatedEnabled="1" Url="/front-end" UseSessionCookie="2"/>
+      <Resource Name="Todo.pkg" Directory="cls" />
+      <CSPApplication CookiePath="/front-end/" DefaultTimeout="900" DispatchClass="Todo.REST" MatchRoles=":%All" PasswordAuthEnabled="1" Recurse="1" ServeFiles="1" ServeFilesTimeout="3600" UnauthenticatedEnabled="1" Url="/front-end/api" UseSessionCookie="2"/>
+      <CSPApplication CookiePath="/front-end/" DefaultTimeout="900" SourcePath="/front-end/todoapp" DeployPath="${cspdir}front-end" MatchRoles=":%All" PasswordAuthEnabled="1" Recurse="1" ServeFiles="1" ServeFilesTimeout="3600" UnauthenticatedEnabled="1" Url="/front-end" UseSessionCookie="2"/>
       <SourcesRoot>src</SourcesRoot>
     </Module>
   </Document>
